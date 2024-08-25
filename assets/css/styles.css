@@ -1,0 +1,24 @@
+.key {
+  color: #905;
+}
+
+.brace {
+  color: #586e75;
+}
+
+.value {
+  color: #147a50;
+}
+
+.string {
+  color: #147a50;
+}
+
+.number {
+  color: #e6b41e;
+}
+
+.boolean {
+  color: #e6db74;
+}
+

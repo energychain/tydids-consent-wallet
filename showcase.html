@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html data-bs-theme="light" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>TyDIDs - ConsentWallet</title>
+    <meta name="theme-color" content="#147a50">
+    <meta name="description" content="The TyDIDs Consent Wallet is a Progressive Web Application (PWA) designed to provide users with a comprehensive overview of their granted consents. It allows users to:
+
+View a list of consents, including the associated website (location), and consent ID.
+Revoke consents by initiating a transaction.
+View the payload associated with each consent.
+Export the wallet to a different device for easy transfer.
+">
+    <link rel="icon" type="image/png" sizes="180x180" href="assets/img/ios_180_180.png?h=a9b60225138408e19ffd2da21b472c4b">
+    <link rel="icon" type="image/png" sizes="180x180" href="assets/img/ios_180_180.png?h=a9b60225138408e19ffd2da21b472c4b">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css?h=a549af2a81cd9900ee897d8bc9c4b5e9">
+    <link rel="manifest" href="manifest.json?h=06a3b3cd198bea6c013c2ae6624625de" crossorigin="use-credentials">
+    <link rel="stylesheet" href="assets/css/datatables.min.css?h=2cb1e05cad89b9e8f7564b83d46f2f1c">
+    <link rel="stylesheet" href="assets/css/styles.css?h=a3565ec52254a40fc5e5425071bdfbbf">
+</head>
+
+<body style="padding-bottom: 50px;;">
+    <nav class="navbar navbar-expand-md sticky-top bg-body-tertiary shadow d-print-none">
+        <div class="container-fluid">
+            <h1 class="display-6" style="padding-top: 12px;"><a class="btn btn-lg fs-2" role="button" href="index.html"><span style="color: #147a50;"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-database-check" style="margin-top: -12px;margin-right: 10px;">
+                            <path d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7m1.679-4.493-1.335 2.226a.75.75 0 0 1-1.174.144l-.774-.773a.5.5 0 0 1 .708-.708l.547.548 1.17-1.951a.5.5 0 1 1 .858.514Z"></path>
+                            <path d="M12.096 6.223A4.92 4.92 0 0 0 13 5.698V7c0 .289-.213.654-.753 1.007a4.493 4.493 0 0 1 1.753.25V4c0-1.007-.875-1.755-1.904-2.223C11.022 1.289 9.573 1 8 1s-3.022.289-4.096.777C2.875 2.245 2 2.993 2 4v9c0 1.007.875 1.755 1.904 2.223C4.978 15.71 6.427 16 8 16c.536 0 1.058-.034 1.555-.097a4.525 4.525 0 0 1-.813-.927C8.5 14.992 8.252 15 8 15c-1.464 0-2.766-.27-3.682-.687C3.356 13.875 3 13.373 3 13v-1.302c.271.202.58.378.904.525C4.978 12.71 6.427 13 8 13h.027a4.552 4.552 0 0 1 0-1H8c-1.464 0-2.766-.27-3.682-.687C3.356 10.875 3 10.373 3 10V8.698c.271.202.58.378.904.525C4.978 9.71 6.427 10 8 10c.262 0 .52-.008.774-.024a4.525 4.525 0 0 1 1.102-1.132C9.298 8.944 8.666 9 8 9c-1.464 0-2.766-.27-3.682-.687C3.356 7.875 3 7.373 3 7V5.698c.271.202.58.378.904.525C4.978 6.711 6.427 7 8 7s3.022-.289 4.096-.777M3 4c0-.374.356-.875 1.318-1.313C5.234 2.271 6.536 2 8 2s2.766.27 3.682.687C12.644 3.125 13 3.627 13 4c0 .374-.356.875-1.318 1.313C10.766 5.729 9.464 6 8 6s-2.766-.27-3.682-.687C3.356 4.875 3 4.373 3 4"></path>
+                        </svg><span style="background-color: rgb(255, 255, 255);">tydids</span></span><span style="color: #e6b41e;">Consent - Showcase</span></a></h1><a class="navbar-brand d-none d-md-block" data-bs-toggle="tooltip" data-bss-tooltip="" data-bs-placement="bottom" title=""><button class="btn btn-dark" id="btnMyQR" type="button" style="display:none"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-qr-code">
+                        <path d="M2 2h2v2H2z"></path>
+                        <path d="M6 0v6H0V0zM5 1H1v4h4zM4 12H2v2h2z"></path>
+                        <path d="M6 10v6H0v-6zm-5 1v4h4v-4zm11-9h2v2h-2z"></path>
+                        <path d="M10 0v6h6V0zm5 1v4h-4V1zM8 1V0h1v2H8v2H7V1zm0 5V4h1v2zM6 8V7h1V6h1v2h1V7h5v1h-4v1H7V8zm0 0v1H2V8H1v1H0V7h3v1zm10 1h-1V7h1zm-1 0h-1v2h2v-1h-1zm-4 0h2v1h-1v1h-1zm2 3v-1h-1v1h-1v1H9v1h3v-2zm0 0h3v1h-2v1h-1zm-4-1v1h1v-2H7v1z"></path>
+                        <path d="M7 12h1v3h4v1H7zm9 2v2h-3v-1h2v-1z"></path>
+                    </svg></button></a>
+        </div>
+    </nav>
+    <div class="container" style="margin-top: 60px;">
+        <div class="card">
+            <div class="card-header text-light" style="background: #147a50;">
+                <h4>Demo Scenario</h4>
+            </div>
+            <div class="card-body">
+                <h6 class="text-muted card-subtitle mb-2">Personal Data at ACME Corp</h6>
+                <p class="card-text">ACME Corp, an online retailer, collects personal data from customers through a website form. To comply with GDPR regulations and empower users, ACME provides customers like Alice with a Self-Sovereign Identity (SSI) upon form submission. This SSI serves as a digital credential enabling Alice to manage her data privacy preferences. By utilizing the SSI, Alice can revoke consent for data processing at any time, ensuring greater control over her personal information.</p>
+            </div>
+        </div>
+        <div class="card" style="margin-top: 25px;">
+            <div class="card-header text-dark" style="background: #e6b41e;">
+                <h4>Showcase</h4>
+            </div>
+            <div class="card-body">
+                <form id="testForm" method="post" action="/api/frontend/submit">
+                    <div class="input-group"><span class="input-group-text" style="min-width:200px">Firstname</span><input class="form-control" type="text" value="Alice" name="first_name"></div>
+                    <div class="input-group" style="margin-top: 15px;"><span class="input-group-text" style="min-width:200px">Lastname</span><input class="form-control" type="text" value="Schmidt" name="last_name"></div>
+                    <hr>
+                    <div class="form-check" style="margin-top: 15px;"><input class="form-check-input" type="checkbox" id="consent" required="" name="consent" signature="consent_signature" payload="consent_payload" identity="consent_identity" submit="submit"><label class="form-check-label" for="pivacyConfirmed">By checking this box, I acknowledge that I &nbsp;consent to ACME Corp's processing of my personal data as outlined in the Privacy Policy. I understand that I can revoke this consent at any time using the SSI downloaded after checking.</label></div>
+                    <hr>
+                    <h4>"Hidden" fields submitted to ACME Corp</h4><small class="form-text">To illustrate how ACME Corp captures and stores user consent, we've made following fields visible. In a real-world scenario, these fields would be populated automatically to provide proof of consent in accordance with privacy laws.</small>
+                    <div class="input-group"><span class="input-group-text" style="min-width:200px">Identity</span><input class="form-control" type="text" id="consent_identity" readonly="" name="consent_identity" disabled="" required=""></div>
+                    <div class="input-group" style="margin-top: 15px;"><span class="input-group-text" style="min-width:200px">Signature</span><input class="form-control" type="text" id="consent_signature" readonly="" name="consent_signature" disabled="" required=""></div>
+                    <div class="input-group" style="margin-top: 15px;"><span class="input-group-text" style="min-width:200px">Payload</span><input class="form-control" type="text" id="consent_payload" readonly="" name="consent_payload" disabled="" required=""></div>
+                    <hr>
+                    <div class="text-center"><button class="btn btn-dark" id="submit" type="submit">Submit to ACME</button></div>
+                </form>
+            </div>
+        </div>
+        <div class="card" style="margin-top:25px;">
+            <div class="card-header text-light" style="background: #147a50;">
+                <h4>tl;dr</h4>
+            </div>
+            <div class="card-body">
+                <h6 class="text-muted card-subtitle mb-2">Implementation at ACME Corp</h6>
+                <p class="card-text">ACME Corp stores user data and associated consent information, including an Identifier. To comply with data privacy regulations, ACME regularly checks if the user has revoked consent using its SSI. This ensures that data is handled in accordance with the user's wishes. It's important to note that ACME doesn't control the SSI; it's owned and managed by the user.</p>
+                <ul>
+                    <li>Form is submitted to <span class="text-success-emphasis font-monospace">/api/frontend/submit</span>&nbsp;of <a href="https://github.com/energychain/tydids-ssi-consent-router" target="_blank">Consent-Router</a>.</li>
+                    <li>Consent-Router will monitor grant/revoke status.</li>
+                    <li>Consent-Router forwards or redirects depending on <span class="text-success-emphasis font-monospace">.env</span>&nbsp;setting to legacy backend</li>
+                    <li>Backend checks&nbsp;<span class="text-success-emphasis font-monospace">/api/frontend/status</span>&nbsp;if consent got revoked or listens to webhook</li>
+                </ul>
+                <h6 class="text-muted card-subtitle mb-2">Good to know for Alice</h6>
+                <p class="card-text">Alice downloaded her SSI, which gives her full control over her data and consent. She can revoke consent at any time by using her SSI. However, it's essential to understand that revoking consent doesn't immediately delete her data. ACME must process her revocation request and update their systems accordingly. This process might take some time. By maintaining control of her SSI, she ensures her data privacy rights are upheld.</p>
+            </div>
+        </div>
+        <div class="row" style="margin-top: 50px;">
+            <div class="col">
+                <p class="text-muted my-2" data-bs-toggle="tooltip" data-bss-tooltip="" data-bs-placement="bottom" title="Digital Infrastructure for Tomorrow">&nbsp;© 2024 <a href="https://stromdao.de/" target="_blank"><strong><span style="color: rgb(0, 0, 0);">STROM</span></strong></a><a href="https://stromdao.de/" target="_blank"><span style="color: rgb(0, 0, 0);">DAO</span></a> GmbH</p>
+            </div>
+            <div class="col text-center"><a data-bs-toggle="tooltip" data-bss-tooltip="" data-bs-placement="bottom" href="https://github.com/energychain/tydids-core" title="Open Source" style="margin-right: 15px;;"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-github" style="color: var(--bs-body-color);">
+                        <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8"></path>
+                    </svg></a><a data-bs-toggle="tooltip" data-bss-tooltip="" data-bs-placement="bottom" href="https://corrently.io/books/tydids" target="_blank" title="Online Dokumentation - tydidsValidation"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-book" style="color: var(--bs-body-color);">
+                        <path d="M1 2.828c.885-.37 2.154-.769 3.388-.893 1.33-.134 2.458.063 3.112.752v9.746c-.935-.53-2.12-.603-3.213-.493-1.18.12-2.37.461-3.287.811V2.828zm7.5-.141c.654-.689 1.782-.886 3.112-.752 1.234.124 2.503.523 3.388.893v9.923c-.918-.35-2.107-.692-3.287-.81-1.094-.111-2.278-.039-3.213.492V2.687zM8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783"></path>
+                    </svg></a></div>
+            <div class="col align-items-lg-end"><a class="text-end float-none" href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank"><img data-bs-toggle="tooltip" data-bss-tooltip="" data-bs-placement="bottom" src="assets/img/cc-by-nc-sa.png?h=e9a271ff4176cb01cae9c225979c46f9" title="Lizenz: Creative Commons - Namensnennung - Nicht Kommerziell - Weitergabe unter gleichen Bedingungen 4.0 International"></a></div>
+        </div>
+    </div>
+    <script src="assets/js/jquery.min.js?h=6bcc3684f18aa21874fa709f122723cf"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js?h=374d178d651fa0eaf680a1fa7b40c788"></script>
+    <script src="assets/js/bs-init.js?h=f85385df9bc7fca4241bc1dbf53b9d61"></script>
+    <script src="assets/js/external/qrcode.min.js?h=517b55d3688ce9ef1085a3d9632bcb97"></script>
+    <script src="assets/js/external/html5-qrcode.min.js?h=d88d3200cb547c9e86ee972975561dcd"></script>
+    <script src="assets/js/tydids.js?h=c9019bb53b0de0866b279a98993d3fde"></script>
+    <script src="assets/js/tydids-jquery-consent.js?h=066824d6522916b23e14889ecc6f89e4"></script>
+    <script src="assets/js/external/crypto-js.min.js?h=2ca03ad87885ab983541092b87adb299"></script>
+    <script src="assets/js/showcase.js?h=07feec48c53edec4d9b532fb6497aa56"></script>
+</body>
+
+</html>
